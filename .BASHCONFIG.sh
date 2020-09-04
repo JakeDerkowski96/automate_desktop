@@ -1,8 +1,6 @@
 #!/bin/bash
 BASH_USR=".bashing" # BASHRC FILE TO BE COPIED
-BASH_LOC="${HOME}/bashrc"
-# ALIAS_USR=".s-termcuts" # BASH ALIASES FILE TO BE CP'ED
-# ALIAS_LOC="${HOME}/.bash_a"
+ALIAS_USR=".s-termcuts" # BASH ALIASES FILE TO BE CP'ED
 ALIAS_LOC="${HOME}/.bash_aliases"
 BASH_LOC="${HOME}/.bashrc"
 
@@ -35,4 +33,4 @@ testing_bash() {
 
 make_aliases $ALIAS_LOC;
 make_rc $BASH_LOC
-testing_bash
+# testing_bash
