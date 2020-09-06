@@ -13,6 +13,8 @@ BASH_LOC="${HOME}/.bashrc"
 BackUpBash(){
   if [ -f "${1}" ]; then
     cp $1 "${1}.bak"
+  else
+    touch $1
   fi
 }
 
