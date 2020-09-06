@@ -101,9 +101,10 @@ install_everything(){
                                      bash "$SCRIPTS/snap.sh";
                                      complete_install;
 
-  													 [nN]* ) "Thanks for using"; exit;;
+  													 [nN]* ) echo "Thanks for using"; exit;;
 
-  													 * )      echo "Invalid input."; break;;
+  													 * )     echo "Invalid input.";
+                                     break;;
   												 esac
   											 done
 
@@ -122,4 +123,4 @@ install_everything(){
 }
 
 required;
-execution;
+execution scripts;

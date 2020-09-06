@@ -40,7 +40,6 @@ show_host_ip;
 auto_install;
 
 # terminal
-pprint "Terminal";
 sleep 1;
 term_check;
 source $HOME/.bashrc
