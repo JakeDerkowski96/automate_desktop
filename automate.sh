@@ -43,9 +43,9 @@ while true; do
             # ./scripts/packages.sh
             # ./scripts/snaps.sh
 
-            ./$TERMIN
-            ./$PKGS
-            ./$SNAPS
+            bash $TERMIN
+            bash $PKGS
+            bash $SNAPS
 
             # check_dir "deb";
 
