@@ -68,7 +68,6 @@ term_check() {
       [Nn]* ) exit;;
 
       * )     echo "Invalid input";
-              break;;
     esac
   done
 }
