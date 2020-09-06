@@ -96,50 +96,50 @@ get_ans() {
     esac
   done
 }
-
-
-# install snaps
-snap_install() {
-  read -p "Install Snaps? (Y/n) : " answer
-  while true; do
-    case $answer in
-      [yY]* ) start_install "Snaps";
-              bash "$SCRIPTS/snap.sh";
-              finish_install;
-              break;;
-
-      [nN]* ) echo "Thanks for using";
-              exit;;
-
-      * )     echo -e "Please enter 'y' or 'n'.";
-      break;;
-    esac
-  done
-}
-
-
-
-package_install() {
-  read -p "Would you like to install all packages? (Y/n) : " answer
-  while true; do
-    case $answer in
-      [yY]* ) start_install "packages";
-              bash "$SCRIPTS/packages.sh" >
-              finish_install
-              break;;
-
-      [nN]* ) echo -e "no packages fo yo";
-              exit;;
-
-
-      * )     echo -e "Please enter 'y' or 'n'."
-              ;;
-    esac
-  done
-
-
-
-}
+#
+#
+# # install snaps
+# snap_install() {
+#   read -p "Install Snaps? (Y/n) : " answer
+#   while true; do
+#     case $answer in
+#       [yY]* ) start_install "Snaps";
+#               bash "$SCRIPTS/snap.sh";
+#               finish_install;
+#               break;;
+#
+#       [nN]* ) echo "Thanks for using";
+#               exit;;
+#
+#       * )     echo -e "Please enter 'y' or 'n'.";
+#       break;;
+#     esac
+#   done
+# }
+#
+#
+#
+# package_install() {
+#   read -p "Would you like to install all packages? (Y/n) : " answer
+#   while true; do
+#     case $answer in
+#       [yY]* ) start_install "packages";
+#               bash "$SCRIPTS/packages.sh" >
+#               finish_install
+#               break;;
+#
+#       [nN]* ) echo -e "no packages fo yo";
+#               exit;;
+#
+#
+#       * )     echo -e "Please enter 'y' or 'n'."
+#               ;;
+#     esac
+#   done
+#
+#
+#
+# }
 
 # install_everything(){
 #   read -p "Would you like to continue? [Y/n] : " answer

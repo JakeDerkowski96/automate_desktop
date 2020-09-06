@@ -19,10 +19,10 @@ auto_install(){
       [Yy]* ) echo -e "ok, i got ya"; echo; sleep 0.5;
 
       echo -e "Details found in the 'logs' folder";
-      check_dir "logs";
+      check_dir logs;
       echo "Installing prerequistes"; sleep 0.5;
       required > "logs/prereqs";
-      check_dir "scripts";
+      check_dir scripts;
 
       # note
       echo "automate other deb packages coming soon.."; sleep 1;
