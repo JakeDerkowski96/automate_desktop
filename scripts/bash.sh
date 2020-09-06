@@ -11,10 +11,10 @@ BASH_LOC="${HOME}/.bashrc"
 # ===========================================
 # back up bash aliases if exist
 BackUpBash(){
-  if [ -f "$HOME/${1}" ]; then
-    cp $1 "$HOME/{1}.bak"
+  if [ -f "${1}" ]; then
+    cp $1 "${1}.bak"
   else
-    touch "$HOME/${1}"
+    touch "${1}"
   fi
 }
 
