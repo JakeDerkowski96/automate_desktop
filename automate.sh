@@ -5,7 +5,7 @@
 # 3. install snaps
 # experiment with bash automation
 
-FUNC="functions.sh"
+FUNC=".functions.sh"
 
 source $FUNC
 
