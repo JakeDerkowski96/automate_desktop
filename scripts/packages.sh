@@ -86,3 +86,32 @@ install_all() {
   utilities;
   office;
 }
+
+# make ask function
+ask_user() {
+  read -p "Do you want to install ${1}? (Y/n) : " answer
+  while true
+  do
+    case $answer in
+      [yY]* ) ${1};
+              break;;
+              
+      [nN]* ) exit;;
+      
+      * )     echo "Invalid input"
+              echo -e "Enter (y/n)"
+     esac
+   done
+}
+
+install_packages() {
+  # ask yes or now for each "genre" of packages
+  ask_user update;
+  ask_user package_managers;
+  ask_user settings;
+  ask_user network;
+  ask_user media;
+  ask_user prgms;
+  ask_user utilities;
+  ask_user office;
+}
