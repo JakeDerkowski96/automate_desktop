@@ -2,8 +2,7 @@
 # install snaps
 
 HOME_DIR="$(cd .. && pwd)"
-source functions.sh
-SNAP_LOG="${LOG_DEST}/snaps.txt"
+SNAP_LOG=${HOME_DIR}/logs/snaps.txt"
 
 prereqs() {
   sudo apt-get update
