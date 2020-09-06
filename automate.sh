@@ -21,7 +21,7 @@ auto_install(){
       echo -e "Details found in the 'logs' folder";
       check_dir logs;
       echo "Installing prerequistes"; sleep 0.5;
-      required > "logs/prereqs";
+      required > "logs/prereqs.txt";
       check_dir scripts;
 
       # note
