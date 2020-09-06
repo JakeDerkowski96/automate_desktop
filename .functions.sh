@@ -20,7 +20,9 @@ required() {
 }
 
 # print pretty
-pprint() { echo -e "${1} " | figlet | lolcat }
+pprint() {
+  echo -e "${1} " | figlet | lolcat
+}
 
 # put into separate directory and `chmod` recursively
 execution() {
@@ -59,8 +61,7 @@ check_dir(){
 # check user wants my terminal config
 term_check() {
   read -p "Want my terminal settings (Y/n)? : " answer
-  while true
-  do
+  while true; do
     case $answer in
       [Yy]* ) sudo bash "$SCRIPTS/bash.sh";
               break;;
@@ -73,11 +74,15 @@ term_check() {
 }
 
 # DISPLAY WHAT IS INSTALLING
-start_install() { echo -e "preparing to install";  sleep 0.5; pprint ${1}; }
+start_install() {
+  echo -e "preparing to install: ";
+  sleep 0.5; pprint ${1};
+}
 
 # DISPLAY COMPLETE INSTALL
 finish_install() {
-  echo -e "DONE"; sleep 0.5; echo "Details found in log directory "
+  echo -e "DONE"; sleep 0.5;
+  echo "Details found in log directory "
 }
 
 
@@ -91,11 +96,14 @@ get_ans() {
               bash "${2}" > "logs/${1}.txt";
               finish_install;
               break;;
+
       [nN]* ) echo -e "thanks for using!";
               exit;;
+
       * )     echo -e "Enter 'y' for yes, 'n' for no."
     esac
   done
 }
 
 execution;
+check_dir logs;

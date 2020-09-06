@@ -5,7 +5,14 @@
 # 3. install snaps
 # experiment with bash automation
 
-DIR=$(pwd)
+SYSUSR=$USER # MAIN USER
+CWD=$(pwd)
+SCRIPTS="${CWD}/scripts"
+PKGS="${SCRIPTS}/packages.sh"
+SNAPS="${SCRIPTS}/snaps.sh"
+TERM="${SCRIPTS}/bash.sh"
+# DEBS="${SCRIPTS}/debs.sh"
+
 FUNC=".functions.sh"
 
 source $FUNC
@@ -18,7 +25,7 @@ do
     [Yy]* ) echo -e "ok, i got ya"; echo; sleep 0.5;
 
     echo -e "Details found in the 'logs' folder";
-    check_dir logs;
+    # check_dir logs;
     echo "Installing prerequistes"; sleep 0.5;
     required > "logs/prereqs.txt";
     check_dir scripts;
