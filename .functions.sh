@@ -24,7 +24,8 @@ pprint() { echo -e "${1} " | figlet | lolcat }
 
 # put into separate directory and `chmod` recursively
 execution() {
-  find $SCRIPTS -type f -iname "*.sh" -exec chmod +x {} \; }
+  find $SCRIPTS -type f -iname "*.sh" -exec chmod +x {} \;
+}
 
 # RIGHT BEFORE INSTALLATION
 show_host_ip() {
@@ -96,92 +97,5 @@ get_ans() {
     esac
   done
 }
-#
-#
-# # install snaps
-# snap_install() {
-#   read -p "Install Snaps? (Y/n) : " answer
-#   while true; do
-#     case $answer in
-#       [yY]* ) start_install "Snaps";
-#               bash "$SCRIPTS/snap.sh";
-#               finish_install;
-#               break;;
-#
-#       [nN]* ) echo "Thanks for using";
-#               exit;;
-#
-#       * )     echo -e "Please enter 'y' or 'n'.";
-#       break;;
-#     esac
-#   done
-# }
-#
-#
-#
-# package_install() {
-#   read -p "Would you like to install all packages? (Y/n) : " answer
-#   while true; do
-#     case $answer in
-#       [yY]* ) start_install "packages";
-#               bash "$SCRIPTS/packages.sh" >
-#               finish_install
-#               break;;
-#
-#       [nN]* ) echo -e "no packages fo yo";
-#               exit;;
-#
-#
-#       * )     echo -e "Please enter 'y' or 'n'."
-#               ;;
-#     esac
-#   done
-#
-#
-#
-# }
-
-# install_everything(){
-#   read -p "Would you like to continue? [Y/n] : " answer
-#   while true
-#   do
-#     case $answer in
-#      [yY]* ) read -p "Would you like to install all packages? (Y/n) : " answer
-#   	 				 while true
-#   					 do
-#   						 case $answer in
-#   							 [yY]* ) start_install "packages";
-#                          bash "$SCRIPTS/packages.sh";
-#                          finish_install;
-#
-#   							 				 read -p "Install Snaps? [Y/n] : " answer
-#   											 while true
-#   											 do
-#   												 case $answer in
-#   													 [yY]* ) start_install "Snaps";
-#                                      bash "$SCRIPTS/snap.sh";
-#                                      finish_install;
-#
-#   													 [nN]* ) echo "Thanks for using"; exit;;
-#
-#   													 * )     echo "Invalid input.";
-#                                      break;;
-#   												 esac
-#   											 done
-#
-#   							 [nN]* ) echo -e "You're missing out!" exit;;
-#
-#   							 * )     echo "Invalid input."; break ;;
-#   						 esac
-#   					 done
-#              exit;;
-#
-#      [nN]* )
-#               exit;;
-#
-#      * )     echo "Invalid input."; break ;;
-#     esac
-#   done
-# }
 
 execution;
