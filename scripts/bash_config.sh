@@ -20,14 +20,14 @@ BackUpBash(){
 make_aliases(){
   TARGET=$ALIAS_LOC;
   BackUpBash $TARGET;
-  cp $ALIAS_USR $ALIAS_LOC;
+  cp $NEW_ALIASES $ALIAS_LOC;
 }
 
 # BACKUP AND CP NEW BASHRC
 make_rc() {
   TARGET=$BASH_LOC;
   BackUpBash $TARGET;
-  cp $BASH_USR $BASH_LOC;
+  cp $NEW_BASH $BASH_LOC;
 }
 
 testing_bash() {
