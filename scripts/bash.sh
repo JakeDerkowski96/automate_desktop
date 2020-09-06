@@ -25,20 +25,6 @@ my_term() {
   cp $1 $2
 }
 
-# # cp my aliases into home
-# make_aliases(){
-#   TARGET=$ALIAS_LOC;
-#   BackUpBash $TARGET;
-#   cp $NEW_ALIASES $ALIAS_LOC;
-# }
-#
-# # BACKUP AND CP NEW BASHRC
-# make_rc() {
-#   TARGET=$BASH_LOC;
-#   BackUpBash $TARGET;
-#   cp $NEW_BASH $BASH_LOC;
-# }
-
 testing_bash() {
   cat ls -a $HOME
   cat $ALIAS_LOC;

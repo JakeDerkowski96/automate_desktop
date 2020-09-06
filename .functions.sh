@@ -84,15 +84,16 @@ finish_install() {
 # get answer $1=name of package
 # $2 script location
 get_ans() {
-  echo "Do you wish to install ${1}?"
-  select yn in "Yes" "No"; do
-    case $yn in
-      Yes ) start_install "${1}";
-            bash "${2}" > "logs/${1}.txt";
-            finish_install;
-            break;;
-      No )  echo -e "thanks for using!";
-            exit;;
+  read -p "Do you wish to install ${1}? (Y/n) : " ans
+  while true; do
+    case $ans in
+      [yY]* ) start_install "${1}";
+              bash "${2}" > "logs/${1}.txt";
+              finish_install;
+              break;;
+      [nN]* ) echo -e "thanks for using!";
+              exit;;
+      * )     echo -e "Enter 'y' for yes, 'n' for no."
     esac
   done
 }
