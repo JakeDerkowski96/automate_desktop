@@ -4,12 +4,15 @@
 
 
 SYSUSR=$USER # MAIN USER
-INSTALL_HOME="$PWD"
+INSTALL_HOME=$(pwd)
+
+# put into separate directory and `chmod` recursively
 
 make_exec() {
   chmod +x .BASHCONFIG.sh
   chmod +x .package.sh
   chmod +x .snap.sh
+  chmod +x .deb_install.sh
 }
 
 # RIGHT BEFORE INSTALLATION
@@ -35,12 +38,13 @@ pprint() {
   echo -e "${1} " | figlet | lolcat
 }
 
-# check if DIR exists
-check_directory() { # check if does not exist
+# check if does exists
+check_directory() { 
   if [ ! -d "${1}" ]; then
     mkdir ${1};
   else
-    echo -e "Find installtions details in the 'logs' directory."
+    echo -e "${1} already exists";
+    # echo -e "Find installtions details in the 'logs' directory."
   fi
 }
 
