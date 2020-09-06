@@ -3,8 +3,8 @@
 HOME_DIR="$(cd .. && pwd)"
 CONTENT_DIR="$HOME_DIR/.content"
 # ===========================================
-NEW_BASH="$CONTENT_DIR/my_bashrc"
-NEW_ALIASES="$CONTENT_DIR/my_aliases"
+NEW_BASH="$HOME_DIR/my_bashrc"
+NEW_ALIASES="$HOME_DIR/my_aliases"
 # ===========================================
 ALIAS_LOC="${HOME}/.bash_aliases"
 BASH_LOC="${HOME}/.bashrc"
