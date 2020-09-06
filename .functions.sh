@@ -8,6 +8,7 @@ INSTALL_HOME=$(pwd)
 SCRIPTS="$INSTALL_HOME/scripts"
 PKGS="${SCRIPTS}/packages.sh"
 SNAPS="${SCRIPTS}/snaps.sh"
+TERMIN="$SCRIPTS/bash.sh"
 # DEBS="${SCRIPTS}/debs.sh"
 
 CONTENT="$INSTALL_HOME/.content"
@@ -63,7 +64,7 @@ term_check() {
   read -p "Want my terminal settings (Y/n)? : " answer
   while true; do
     case $answer in
-      [Yy]* ) sudo bash "$SCRIPTS/bash.sh";
+      [Yy]* ) bash "$SCRIPTS/bash.sh";
               break;;
 
       [Nn]* ) exit;;
@@ -93,7 +94,7 @@ get_ans() {
   while true; do
     case $ans in
       [yY]* ) start_install "${1}";
-              bash "${2}" > "logs/${1}.txt";
+              bash "${2}"; # > "logs/${1}.txt";
               finish_install;
               break;;
 

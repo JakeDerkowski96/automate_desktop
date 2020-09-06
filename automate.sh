@@ -38,13 +38,14 @@ do
     # dispaly pretty terminal
     show_host_ip;
 
+    # pprint Terminal;
+    # term_check;
+    get_ans "Terminal" $TERMIN;
+    get_ans "Packages" $PKGS;
+    get_ans "Snaps" $SNAPS;
+
     # check_dir "deb";
-    pprint Terminal;
-    term_check;
-
-    get_ans "packages" $PKGS;
-    get_ans "snaps" $SNAPS;
-
+    
     break;;
 
     [Nn]* ) echo -e "why run this then?"

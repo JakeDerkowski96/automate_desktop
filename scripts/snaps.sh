@@ -13,7 +13,7 @@ echo "more info @ ${HOME_DIR}/logs/snap.txt"
 
 install_snaps(){
   # sudo snap install bitwarden
-  # sudo snap install code --classic
+  sudo snap install code --classic
   # sudo snap install discord
   # sudo snap install eclipse --classic
   sudo snap install john-the-ripper
@@ -22,7 +22,7 @@ install_snaps(){
   # sudo snap install simplenote
 }
 
-pv install_snaps > $SNAP_LOG
+install_snaps > $SNAP_LOG
 
-figlet "Oh Snap"
-sleep 2;
+figlet "Oh Snap"; sleep 2;
+echo -e "Done.";
