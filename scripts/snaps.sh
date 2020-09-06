@@ -8,7 +8,6 @@ SNAP_LOG="${HOME_DIR}/logs/snaps.txt"
 pprint "SNAPS"
 touch SNAP_LOG
 
-
 echo "more info @ ${HOME_DIR}/logs/snap.txt"
 
 install_snaps(){

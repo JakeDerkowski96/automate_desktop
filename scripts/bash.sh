@@ -18,30 +18,16 @@ BackUpBash(){
   fi
 }
 
-# $1 is source
-# $2 is destination
-my_term() {
-  BackUpBash "${2}";
-  cp $1 $2
-}
+echo "Backing up exisiting/making new files.."; sleep 1;
 
-testing_bash() {
-  cat ls -a $HOME
-  cat $ALIAS_LOC;
-  cat $BASH_LOC;
-}
+BackUpBash $ALIAS_LOC;
+BackUpBash $BASH_LOC;
 
-term_main(){
-  my_term $NEW_ALIASES $ALIAS_LOC;
-  my_term $NEW_BASH $BASH_LOC;
-}
+echo -e "Moving my files to yo spot"; sleep 1;
+cp $NEW_ALIASES $ALIAS_LOC
+cp $NEW_BASH $BASH_LOC
 
-term_main;
-source "$HOME/.bashrc"
-sleep 1;
+echo -e "testing new terminal settings"
+source "$HOME/.bashrc"; sleep 2;
 
-
-#
-# make_aliases $ALIAS_LOC;
-# make_rc $BASH_LOC
-# # testing_bash
+echo "Terminal Complete"

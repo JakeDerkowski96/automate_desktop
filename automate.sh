@@ -19,39 +19,42 @@ source $FUNC
 
 # automate installaton
 read -p "Automate installation? (Y/n)?  : " answer
-while true
-do
+while true; do
   case $answer in
     [Yy]* ) echo -e "ok, i got ya"; echo; sleep 0.5;
 
-    echo -e "Details found in the 'logs' folder";
-    # check_dir logs;
-    echo "Installing prerequistes"; sleep 0.5;
-    required > "logs/prereqs.txt";
-    check_dir scripts;
+            echo -e "Details found in the 'logs' folder";
+            # check_dir logs;
+            echo "Installing prerequistes"; sleep 0.5;
+            required > "logs/prereqs.txt";
+            check_dir scripts;
 
-    # note
-    echo "automate other deb packages coming soon.."; sleep 1;
+            # note
+            echo "automate other deb packages coming soon.."; sleep 1;
 
-    echo -e "beginning..."; sleep 0.5;
+            echo -e "beginning..."; sleep 0.5;
 
-    # dispaly pretty terminal
-    show_host_ip;
+            # dispaly pretty terminal
+            show_host_ip;
 
-    # pprint Terminal;
-    # term_check;
-    get_ans "Terminal" $TERMIN;
-    get_ans "Packages" $PKGS;
-    get_ans "Snaps" $SNAPS;
+            # pprint Terminal;
+            # term_check;
+            # ./scripts/bash
+            # ./scripts/packages.sh
+            # ./scripts/snaps.sh
 
-    # check_dir "deb";
+            ./$TERMIN
+            ./$PKGS
+            ./$SNAPS
 
-    break;;
+            # check_dir "deb";
+
+            break;;
 
     [Nn]* ) echo -e "why run this then?"
             exit;;
 
-    * ) echo "Invalid input";
-        break;;
+    * )      echo "Invalid input";
+             break;;
   esac
 done

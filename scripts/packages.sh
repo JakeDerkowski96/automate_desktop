@@ -1,9 +1,8 @@
 #!/bin/bash
 # install packages from apt
 
-HM="$(cd .. && pwd)"
-LOG_DEST="$HM/logs/apt.txt"
-
+HOME_DIR="$(cd .. && pwd)"
+APT_LOG="${HOME_DIR}/logs/snaps.txt"
 # print pretty
 pprint() {
   echo -e "${1} " | figlet | lolcat
@@ -11,41 +10,41 @@ pprint() {
 
 #update and upgrade
 update() {
-  sudo apt-get update && sudo apt-get upgrade -y > $LOG_DEST
+  sudo apt-get update && sudo apt-get upgrade -y > $APT_LOG
 }
 
 # Install package manager
 package_managers() {
   pprint "Package Managers"
-  sudo apt-get install synaptic gdebi snapd -y # > $LOG_DEST
+  sudo apt-get install synaptic gdebi snapd -y > $APT_LOG
 }
 
 # user settings
 settings() {
   pprint "User Settings"
-  sudo apt-get install gnome-tweak-tool autoconf -y > $LOG_DEST
-  sudo apt-get install automake wget sassc pkg-config optipng -y > $LOG_DEST
-  sudo apt-get install numix-icon-theme python3-pip -y > $LOG_DEST
+  sudo apt-get install gnome-tweak-tool autoconf -y > $APT_LOG
+  sudo apt-get install automake wget sassc pkg-config optipng -y > $APT_LOG
+  sudo apt-get install numix-icon-theme python3-pip -y > $APT_LOG
 }
 
 # network
 network() {
   pprint "network";
-  sudo apt-get install net-tools nmap apt-transport-https hping3 -y > $LOG_DEST
+  sudo apt-get install net-tools nmap apt-transport-https hping3 -y > $APT_LOG
 
   # internet
   pprint "Internet"
   # download google chrome
   wget -qO https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  sudo dpkg -i google-chrome*.deb -y > $LOG_DEST
+  sudo dpkg -i google-chrome*.deb -y > $APT_LOG
   #-----
-  sudo apt-get install chrome-gnome-shell links bittorrent git -y > $LOG_DEST
+  sudo apt-get install chrome-gnome-shell links bittorrent git -y > $APT_LOG
 }
 
 # media
 media(){
   pprint "Media"; sleep 1;
-  sudo apt-get install vlc -y > $LOG_DEST
+  sudo apt-get install vlc -y > $APT_LOG
   # spotify
   # curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
   # echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
@@ -54,33 +53,33 @@ media(){
 # programming
 prgms() {
   pprint "Programming"; sleep 1;
-  sudo apt-get install gcc g++ sqlitebrowser mariadb-client mariadb-common openjdk-11-jdk -y > $LOG_DEST
+  sudo apt-get install gcc g++ sqlitebrowser mariadb-client mariadb-common openjdk-11-jdk -y > $APT_LOG
 }
 
 # system/utilities
 utilities() {
   pprint "Utilities"
   sudo apt-get install afflib-tools netdiscover wireshark openssl -y
-  sudo apt-get install htop gtkhash ghex -y > $LOG_DEST
+  sudo apt-get install htop gtkhash ghex -y > $APT_LOG
 
 }
 
 # office
 office() {
   pprint "Office"
-  sudo apt-get install texmaker cherrytree -y > $LOG_DEST
+  sudo apt-get install texmaker cherrytree -y > $APT_LOG
   pprint "ATOM"
   wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
   sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
-  sudo apt-get update > $LOG_DEST
-  sudo apt-get install atom -y > $LOG_DEST
+  sudo apt-get update > $APT_LOG
+  sudo apt-get install atom -y > $APT_LOG
 
   # sublime
   pprint "SUBLIME"
   wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
   echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-  sudo apt-get update -y > $LOG_DEST
-  sudo apt-get install sublime-text -y > $LOG_DEST
+  sudo apt-get update -y > $APT_LOG
+  sudo apt-get install sublime-text -y > $APT_LOG
 }
 
 install_all() {
@@ -113,14 +112,22 @@ ask_user() {
 
 install_packages() {
   # ask yes or now for each "genre" of packages
-  ask_user update;
-  ask_user package_managers;
-  ask_user settings;
-  ask_user network;
-  ask_user media;
-  ask_user prgms;
-  ask_user utilities;
-  ask_user office;
+  read -p "Do you want: " pkg
+  while true; do
+    case $pkg in
+      [yY]* ) ask_user update;
+              ask_user package_managers;
+              ask_user settings;
+              ask_user network;
+              ask_user media;
+              ask_user prgms;
+              ask_user utilities;
+              ask_user office;
+              break;
+      [nN]* ) exit;;
+      * ) echo "Invalid input"
+    esac
+  done
 }
 
 install_packages;
