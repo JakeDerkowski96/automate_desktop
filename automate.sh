@@ -5,6 +5,7 @@
 # 3. install snaps
 # experiment with bash automation
 
+AUTOHOME_DIR=$(pwd)
 FUNC=".functions.sh"
 
 source $FUNC
@@ -18,7 +19,10 @@ auto_install(){
       [Yy]* ) echo -e "ok, i got ya"; echo; sleep 0.5;
       # check_uid;
       required > /dev/null;
-      check_directory logs;
+      check_dir "logs";
+      check_dir "scripts";
+      # check_dir "deb";
+
       break;;
 
       [Nn]* ) echo -e "why run this then?"

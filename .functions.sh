@@ -5,14 +5,27 @@
 
 SYSUSR=$USER # MAIN USER
 INSTALL_HOME=$(pwd)
+SCRIPTS="$INSTALL_HOME/scripts"
+CONTENT="$INSTALL_HOME/.content"
+
+
+# make_exec() {
+#   chmod +x .BASHCONFIG.sh
+#   chmod +x .package.sh
+#   chmod +x .snap.sh
+#   chmod +x .deb_install.sh
+# }
+
+# download prereqs to make terminal pretty + progress bar
+required() {
+  echo "Downloading prerequistes..."
+  sudo apt-get update
+  sudo apt-get install lolcat figlet snapd pv libncurses5-dev progress -y
+}
 
 # put into separate directory and `chmod` recursively
-
-make_exec() {
-  chmod +x .BASHCONFIG.sh
-  chmod +x .package.sh
-  chmod +x .snap.sh
-  chmod +x .deb_install.sh
+execution() {
+  find $1 -type f -iname "*.sh" -exec chmod +x {} \;
 }
 
 # RIGHT BEFORE INSTALLATION
@@ -27,12 +40,6 @@ show_host_ip() {
   pprint "$(hostname -I)"; sleep 1;
 }
 
-# download prereqs to make terminal pretty
-required() {
-  sudo apt-get update
-  sudo apt-get install lolcat figlet -y
-}
-
 # print pretty
 pprint() {
   echo -e "${1} " | figlet | lolcat
@@ -40,18 +47,17 @@ pprint() {
 
 # check if does exists
 check_dir(){
-	args
-	  : @required string DIR
-	  
-	if [ ! -d "${DIR}" ]; then
-		mkdir "${DIR}";
+	if [ ! -d "${1}" ]; then
+    if [ $1 == "logs"]; then
+      mkdir "${1}";
+    else
+      echo "${1} is essential for installation."
+    fi
   # optional check
 	else
-		echo "$DIR exists";
+		echo "${1} exists";
 	fi
 }
-
-
 
 # check user wants my terminal config
 term_check() {
@@ -59,7 +65,9 @@ term_check() {
   while true
   do
     case $answer in
-      [Yy]* ) sudo ./.BASHCONFIG; pwd;
+      [Yy]* ) pprint terminal;
+              sudo ./"$SCRIPTS/bash.sh";
+              pwd;
               break;;
 
       [Nn]* ) exit;;
@@ -98,7 +106,7 @@ install_everything(){
   											 do
   												 case $answer in
   													 [yY]* ) begin_install;
-                                     ./.snaps.sh
+                                     ./.snap.sh
                                      complete_install;
 
   													 [nN]* ) "Thanks for using"; exit;;
@@ -121,12 +129,5 @@ install_everything(){
   done
 }
 
-
-
-# required > /dev/null
-
-# check_directory logs
-
-# ls
-
-# exit;
+required;
+execution;

@@ -1,13 +1,18 @@
 #!/bin/bash
-BASH_USR=".bashing" # BASHRC FILE TO BE COPIED
-ALIAS_USR=".s-termcuts" # BASH ALIASES FILE TO BE CP'ED
+# ===========================================
+HOME_DIR="$(cd .. && pwd)"
+CONTENT_DIR="$HOME_DIR/.content"
+# ===========================================
+NEW_BASH="$CONTENT_DIR/my_bashrc"
+NEW_ALIASES="$CONTENT_DIR/my_aliases"
+# ===========================================
 ALIAS_LOC="${HOME}/.bash_aliases"
 BASH_LOC="${HOME}/.bashrc"
-
+# ===========================================
 # back up bash aliases if exist
 BackUpBash(){
-  if [ -f $TARGET ]; then
-    cp $TARGET "${TARGET}.bak"
+  if [ -f "${1}" ]; then
+    cp $1 "${1}.bak"
   fi
 }
 
@@ -33,4 +38,4 @@ testing_bash() {
 
 make_aliases $ALIAS_LOC;
 make_rc $BASH_LOC
-# testing_bash
+testing_bash
