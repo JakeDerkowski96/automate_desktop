@@ -8,14 +8,6 @@ INSTALL_HOME=$(pwd)
 SCRIPTS="$INSTALL_HOME/scripts"
 CONTENT="$INSTALL_HOME/.content"
 
-
-# make_exec() {
-#   chmod +x .BASHCONFIG.sh
-#   chmod +x .package.sh
-#   chmod +x .snap.sh
-#   chmod +x .deb_install.sh
-# }
-
 # download prereqs to make terminal pretty + progress bar
 required() {
   echo "Downloading prerequistes..."

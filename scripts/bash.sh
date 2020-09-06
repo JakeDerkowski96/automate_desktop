@@ -1,6 +1,7 @@
 #!/bin/bash
 # ===========================================
-HOME_DIR="$(cd .. && pwd)"
+HOME_DIR="$(pwd)"
+
 CONTENT_DIR="$HOME_DIR/.content"
 # ===========================================
 NEW_BASH="$CONTENT_DIR/my_bashrc"
