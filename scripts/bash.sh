@@ -1,7 +1,6 @@
 #!/bin/bash
 # ===========================================
-HOME_DIR="$(pwd)"
-
+HOME_DIR="$(cd .. && pwd)"
 CONTENT_DIR="$HOME_DIR/.content"
 # ===========================================
 NEW_BASH="$CONTENT_DIR/my_bashrc"
@@ -12,26 +11,33 @@ BASH_LOC="${HOME}/.bashrc"
 # ===========================================
 # back up bash aliases if exist
 BackUpBash(){
-  if [ -f "${1}" ]; then
-    cp $1 "${1}.bak"
+  if [ -f "$HOME/${1}" ]; then
+    cp $1 "$$HOME/{1}.bak"
   else
-    touch $1
+    touch "$HOME/${1}"
   fi
 }
 
-# cp my aliases into home
-make_aliases(){
-  TARGET=$ALIAS_LOC;
-  BackUpBash $TARGET;
-  cp $NEW_ALIASES $ALIAS_LOC;
+# $1 is source
+# $2 is destination
+my_term() {
+  BackUpBash "${2}";
+  cp $1 $2
 }
 
-# BACKUP AND CP NEW BASHRC
-make_rc() {
-  TARGET=$BASH_LOC;
-  BackUpBash $TARGET;
-  cp $NEW_BASH $BASH_LOC;
-}
+# # cp my aliases into home
+# make_aliases(){
+#   TARGET=$ALIAS_LOC;
+#   BackUpBash $TARGET;
+#   cp $NEW_ALIASES $ALIAS_LOC;
+# }
+#
+# # BACKUP AND CP NEW BASHRC
+# make_rc() {
+#   TARGET=$BASH_LOC;
+#   BackUpBash $TARGET;
+#   cp $NEW_BASH $BASH_LOC;
+# }
 
 testing_bash() {
   cat ls -a $HOME
@@ -39,6 +45,17 @@ testing_bash() {
   cat $BASH_LOC;
 }
 
-make_aliases $ALIAS_LOC;
-make_rc $BASH_LOC
-testing_bash
+term_main(){
+  my_term $NEW_ALIASES $ALIAS_LOC;
+  my_term $NEW_BASH $BASH_LOC;
+}
+
+term_main;
+source "$HOME/.bashrc"
+sleep 1;
+
+
+#
+# make_aliases $ALIAS_LOC;
+# make_rc $BASH_LOC
+# # testing_bash
