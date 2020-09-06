@@ -18,7 +18,7 @@ FUNC=".functions.sh"
 source $FUNC
 
 # automate installaton
-read -p "Automate installation? [Y/n]?  : " answer
+read -p "Automate installation? (Y/n)?  : " answer
 while true
 do
   case $answer in
@@ -45,7 +45,7 @@ do
     get_ans "Snaps" $SNAPS;
 
     # check_dir "deb";
-    
+
     break;;
 
     [Nn]* ) echo -e "why run this then?"
