@@ -8,6 +8,8 @@ pprint() {
   echo -e "${1} " | figlet | lolcat
 }
 
+touch $APT_LOG
+
 #update and upgrade
 update() {
   sudo apt-get update && sudo apt-get upgrade -y > $APT_LOG
