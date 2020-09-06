@@ -18,7 +18,7 @@ auto_install(){
     case $answer in
       [Yy]* ) echo -e "ok, i got ya"; echo; sleep 0.5;
       # check_uid;
-      required > /dev/null;
+      # required > /dev/null;
       check_dir "logs";
       check_dir "scripts";
       # check_dir "deb";

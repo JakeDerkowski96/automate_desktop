@@ -48,7 +48,7 @@ pprint() {
 # check if does exists
 check_dir(){
 	if [ ! -d "${1}" ]; then
-    if [ $1 == "logs"]; then
+    if [ $1 == "logs" ]; then
       mkdir "${1}";
     else
       echo "${1} is essential for installation."
@@ -66,7 +66,7 @@ term_check() {
   do
     case $answer in
       [Yy]* ) pprint terminal;
-              sudo ./"$SCRIPTS/bash.sh";
+              sudo bash "$SCRIPTS/bash.sh";
               pwd;
               break;;
 
@@ -80,7 +80,7 @@ term_check() {
 
 # DISPLAY WHAT IS INSTALLING
 begin_install() {
-  echo "preparing to install";  sleep 0.5; pprint ${1};
+  echo -e "preparing to install";  sleep 0.5; pprint ${1};
 }
 
 # DISPLAY COMPLETE INSTALL
@@ -98,20 +98,20 @@ install_everything(){
   					 do
   						 case $answer in
   							 [yY]* ) begin_install packages;
-                         ./.packages.sh
+                         bash "$SCRIPTS/packages.sh";
                          complete_install;
 
   							 				 read -p "Install Snaps? [Y/n] : " answer
   											 while true
   											 do
   												 case $answer in
-  													 [yY]* ) begin_install;
-                                     ./.snap.sh
+  													 [yY]* ) begin_install snaps;
+                                     bash "$SCRIPTS/snap.sh";
                                      complete_install;
 
   													 [nN]* ) "Thanks for using"; exit;;
 
-  													 * )     echo "Invalid input."; break ;;
+  													 * )      echo "Invalid input."; break;;
   												 esac
   											 done
 
@@ -120,7 +120,7 @@ install_everything(){
   							 * )     echo "Invalid input."; break ;;
   						 esac
   					 done
-             break;;
+             exit;;
 
      [nN]* ) exit;;
 
