@@ -39,13 +39,16 @@ pprint() {
 }
 
 # check if does exists
-check_directory() { 
-  if [ ! -d "${1}" ]; then
-    mkdir ${1};
-  else
-    echo -e "${1} already exists";
-    # echo -e "Find installtions details in the 'logs' directory."
-  fi
+check_dir(){
+	args
+	  : @required string DIR
+	  
+	if [ ! -d "${DIR}" ]; then
+		mkdir "${DIR}";
+  # optional check
+	else
+		echo "$DIR exists";
+	fi
 }
 
 
