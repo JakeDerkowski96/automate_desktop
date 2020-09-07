@@ -5,10 +5,9 @@ HOME_DIR="$(cd .. && pwd)"
 SNAP_LOG="${HOME_DIR}/logs/snaps.txt"
 # ===========================================
 
-pprint "SNAPS"
-touch SNAP_LOG
+source .functions.sh
 
-echo "more info @ ${HOME_DIR}/logs/snap.txt"
+echo "More info @ ${HOME_DIR}/logs/snaps.txt"
 
 install_snaps(){
   # sudo snap install bitwarden
@@ -21,7 +20,10 @@ install_snaps(){
   # sudo snap install simplenote
 }
 
-install_snaps > $SNAP_LOG
-
+get_ans snaps install_snaps;
 figlet "Oh Snap"; sleep 2;
-echo -e "Done.";
+
+# start_install Snaps;
+# install_snaps;
+# figlet "Oh Snap"; sleep 2;
+# finish_install;

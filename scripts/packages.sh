@@ -1,14 +1,12 @@
 #!/bin/bash
 # install packages from apt
 
-HOME_DIR="$(cd .. && pwd)"
-APT_LOG="${HOME_DIR}/logs/snaps.txt"
-# print pretty
-pprint() {
-  echo -e "${1} " | figlet | lolcat
-}
+APT_LOG="logs/packages.txt"
 
-touch $APT_LOG
+source .functions.sh
+
+echo "More info @ ${HOME_DIR}/logs/packages.txt"
+
 
 #update and upgrade
 update() {
@@ -114,22 +112,16 @@ ask_user() {
 
 install_packages() {
   # ask yes or now for each "genre" of packages
-  read -p "Do you want: " pkg
-  while true; do
-    case $pkg in
-      [yY]* ) ask_user update;
-              ask_user package_managers;
-              ask_user settings;
-              ask_user network;
-              ask_user media;
-              ask_user prgms;
-              ask_user utilities;
-              ask_user office;
-              break;
-      [nN]* ) exit;;
-      * ) echo "Invalid input"
-    esac
-  done
+    ask_user update;
+    ask_user package_managers;
+    ask_user settings;
+    ask_user network;
+    ask_user media;
+    ask_user prgms;
+    ask_user utilities;
+    ask_user office;
 }
 
+pprint Debian Packages
 install_packages;
+pprint Done;

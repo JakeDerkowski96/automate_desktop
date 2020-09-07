@@ -1,0 +1,306 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+g++ is already the newest version (4:9.3.0-1ubuntu2).
+gcc is already the newest version (4:9.3.0-1ubuntu2).
+mariadb-client is already the newest version (1:10.3.22-1ubuntu1).
+mariadb-common is already the newest version (1:10.3.22-1ubuntu1).
+sqlitebrowser is already the newest version (3.11.2-1build2).
+The following additional packages will be installed:
+  ca-certificates-java java-common libatk-wrapper-java libatk-wrapper-java-jni
+  libice-dev libpthread-stubs0-dev libsm-dev libx11-dev libxau-dev libxcb1-dev
+  libxdmcp-dev libxt-dev openjdk-11-jdk-headless openjdk-11-jre
+  openjdk-11-jre-headless x11proto-core-dev x11proto-dev xorg-sgml-doctools
+  xtrans-dev
+Suggested packages:
+  default-jre libice-doc libsm-doc libx11-doc libxcb-doc libxt-doc
+  openjdk-11-demo openjdk-11-source visualvm fonts-ipafont-gothic
+  fonts-ipafont-mincho fonts-wqy-microhei | fonts-wqy-zenhei
+The following NEW packages will be installed:
+  ca-certificates-java java-common libatk-wrapper-java libatk-wrapper-java-jni
+  libice-dev libpthread-stubs0-dev libsm-dev libx11-dev libxau-dev libxcb1-dev
+  libxdmcp-dev libxt-dev openjdk-11-jdk openjdk-11-jdk-headless openjdk-11-jre
+  openjdk-11-jre-headless x11proto-core-dev x11proto-dev xorg-sgml-doctools
+  xtrans-dev
+0 upgraded, 20 newly installed, 0 to remove and 0 not upgraded.
+Need to get 261 MB of archives.
+After this operation, 411 MB of additional disk space will be used.
+Get:1 http://us.archive.ubuntu.com/ubuntu focal/main amd64 java-common all 0.72 [6,816 B]
+Get:2 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 openjdk-11-jre-headless amd64 11.0.8+10-0ubuntu1~20.04 [37.4 MB]
+Get:3 http://us.archive.ubuntu.com/ubuntu focal/main amd64 ca-certificates-java all 20190405ubuntu1 [12.2 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu focal/main amd64 libatk-wrapper-java all 0.37.1-1 [53.0 kB]
+Get:5 http://us.archive.ubuntu.com/ubuntu focal/main amd64 libatk-wrapper-java-jni amd64 0.37.1-1 [45.1 kB]
+Get:6 http://us.archive.ubuntu.com/ubuntu focal/main amd64 xorg-sgml-doctools all 1:1.11-1 [12.9 kB]
+Get:7 http://us.archive.ubuntu.com/ubuntu focal/main amd64 x11proto-dev all 2019.2-1ubuntu1 [594 kB]
+Get:8 http://us.archive.ubuntu.com/ubuntu focal/main amd64 x11proto-core-dev all 2019.2-1ubuntu1 [2,620 B]
+Get:9 http://us.archive.ubuntu.com/ubuntu focal/main amd64 libice-dev amd64 2:1.0.10-0ubuntu1 [47.8 kB]
+Get:10 http://us.archive.ubuntu.com/ubuntu focal/main amd64 libpthread-stubs0-dev amd64 0.4-1 [5,384 B]
+Get:11 http://us.archive.ubuntu.com/ubuntu focal/main amd64 libsm-dev amd64 2:1.2.3-1 [17.0 kB]
+Get:12 http://us.archive.ubuntu.com/ubuntu focal/main amd64 libxau-dev amd64 1:1.0.9-0ubuntu1 [9,552 B]
+Get:13 http://us.archive.ubuntu.com/ubuntu focal/main amd64 libxdmcp-dev amd64 1:1.1.3-0ubuntu1 [25.3 kB]
+Get:14 http://us.archive.ubuntu.com/ubuntu focal/main amd64 xtrans-dev all 1.4.0-1 [68.9 kB]
+Get:15 http://us.archive.ubuntu.com/ubuntu focal/main amd64 libxcb1-dev amd64 1.14-2 [80.5 kB]
+Get:16 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 libx11-dev amd64 2:1.6.9-2ubuntu1.1 [649 kB]
+Get:17 http://us.archive.ubuntu.com/ubuntu focal/main amd64 libxt-dev amd64 1:1.1.5-1 [395 kB]
+Get:18 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 openjdk-11-jre amd64 11.0.8+10-0ubuntu1~20.04 [34.7 kB]
+Get:19 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 openjdk-11-jdk-headless amd64 11.0.8+10-0ubuntu1~20.04 [217 MB]
+Get:20 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 openjdk-11-jdk amd64 11.0.8+10-0ubuntu1~20.04 [4,837 kB]
+Fetched 261 MB in 12s (22.0 MB/s)
+Selecting previously unselected package java-common.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 376751 files and directories currently installed.)
+Preparing to unpack .../00-java-common_0.72_all.deb ...
+Unpacking java-common (0.72) ...
+Selecting previously unselected package openjdk-11-jre-headless:amd64.
+Preparing to unpack .../01-openjdk-11-jre-headless_11.0.8+10-0ubuntu1~20.04_amd64.deb ...
+Unpacking openjdk-11-jre-headless:amd64 (11.0.8+10-0ubuntu1~20.04) ...
+Selecting previously unselected package ca-certificates-java.
+Preparing to unpack .../02-ca-certificates-java_20190405ubuntu1_all.deb ...
+Unpacking ca-certificates-java (20190405ubuntu1) ...
+Selecting previously unselected package libatk-wrapper-java.
+Preparing to unpack .../03-libatk-wrapper-java_0.37.1-1_all.deb ...
+Unpacking libatk-wrapper-java (0.37.1-1) ...
+Selecting previously unselected package libatk-wrapper-java-jni:amd64.
+Preparing to unpack .../04-libatk-wrapper-java-jni_0.37.1-1_amd64.deb ...
+Unpacking libatk-wrapper-java-jni:amd64 (0.37.1-1) ...
+Selecting previously unselected package xorg-sgml-doctools.
+Preparing to unpack .../05-xorg-sgml-doctools_1%3a1.11-1_all.deb ...
+Unpacking xorg-sgml-doctools (1:1.11-1) ...
+Selecting previously unselected package x11proto-dev.
+Preparing to unpack .../06-x11proto-dev_2019.2-1ubuntu1_all.deb ...
+Unpacking x11proto-dev (2019.2-1ubuntu1) ...
+Selecting previously unselected package x11proto-core-dev.
+Preparing to unpack .../07-x11proto-core-dev_2019.2-1ubuntu1_all.deb ...
+Unpacking x11proto-core-dev (2019.2-1ubuntu1) ...
+Selecting previously unselected package libice-dev:amd64.
+Preparing to unpack .../08-libice-dev_2%3a1.0.10-0ubuntu1_amd64.deb ...
+Unpacking libice-dev:amd64 (2:1.0.10-0ubuntu1) ...
+Selecting previously unselected package libpthread-stubs0-dev:amd64.
+Preparing to unpack .../09-libpthread-stubs0-dev_0.4-1_amd64.deb ...
+Unpacking libpthread-stubs0-dev:amd64 (0.4-1) ...
+Selecting previously unselected package libsm-dev:amd64.
+Preparing to unpack .../10-libsm-dev_2%3a1.2.3-1_amd64.deb ...
+Unpacking libsm-dev:amd64 (2:1.2.3-1) ...
+Selecting previously unselected package libxau-dev:amd64.
+Preparing to unpack .../11-libxau-dev_1%3a1.0.9-0ubuntu1_amd64.deb ...
+Unpacking libxau-dev:amd64 (1:1.0.9-0ubuntu1) ...
+Selecting previously unselected package libxdmcp-dev:amd64.
+Preparing to unpack .../12-libxdmcp-dev_1%3a1.1.3-0ubuntu1_amd64.deb ...
+Unpacking libxdmcp-dev:amd64 (1:1.1.3-0ubuntu1) ...
+Selecting previously unselected package xtrans-dev.
+Preparing to unpack .../13-xtrans-dev_1.4.0-1_all.deb ...
+Unpacking xtrans-dev (1.4.0-1) ...
+Selecting previously unselected package libxcb1-dev:amd64.
+Preparing to unpack .../14-libxcb1-dev_1.14-2_amd64.deb ...
+Unpacking libxcb1-dev:amd64 (1.14-2) ...
+Selecting previously unselected package libx11-dev:amd64.
+Preparing to unpack .../15-libx11-dev_2%3a1.6.9-2ubuntu1.1_amd64.deb ...
+Unpacking libx11-dev:amd64 (2:1.6.9-2ubuntu1.1) ...
+Selecting previously unselected package libxt-dev:amd64.
+Preparing to unpack .../16-libxt-dev_1%3a1.1.5-1_amd64.deb ...
+Unpacking libxt-dev:amd64 (1:1.1.5-1) ...
+Selecting previously unselected package openjdk-11-jre:amd64.
+Preparing to unpack .../17-openjdk-11-jre_11.0.8+10-0ubuntu1~20.04_amd64.deb ...
+Unpacking openjdk-11-jre:amd64 (11.0.8+10-0ubuntu1~20.04) ...
+Selecting previously unselected package openjdk-11-jdk-headless:amd64.
+Preparing to unpack .../18-openjdk-11-jdk-headless_11.0.8+10-0ubuntu1~20.04_amd64.deb ...
+Unpacking openjdk-11-jdk-headless:amd64 (11.0.8+10-0ubuntu1~20.04) ...
+Selecting previously unselected package openjdk-11-jdk:amd64.
+Preparing to unpack .../19-openjdk-11-jdk_11.0.8+10-0ubuntu1~20.04_amd64.deb ...
+Unpacking openjdk-11-jdk:amd64 (11.0.8+10-0ubuntu1~20.04) ...
+Setting up java-common (0.72) ...
+Setting up libpthread-stubs0-dev:amd64 (0.4-1) ...
+Setting up xtrans-dev (1.4.0-1) ...
+Setting up xorg-sgml-doctools (1:1.11-1) ...
+Setting up libatk-wrapper-java (0.37.1-1) ...
+Setting up libatk-wrapper-java-jni:amd64 (0.37.1-1) ...
+Setting up openjdk-11-jre-headless:amd64 (11.0.8+10-0ubuntu1~20.04) ...
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/rmid to provide /usr/bin/rmid (rmid) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/java to provide /usr/bin/java (java) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/keytool to provide /usr/bin/keytool (keytool) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/jjs to provide /usr/bin/jjs (jjs) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/pack200 to provide /usr/bin/pack200 (pack200) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/rmiregistry to provide /usr/bin/rmiregistry (rmiregistry) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/unpack200 to provide /usr/bin/unpack200 (unpack200) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/jfr to provide /usr/bin/jfr (jfr) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/lib/jexec to provide /usr/bin/jexec (jexec) in auto mode
+Setting up openjdk-11-jre:amd64 (11.0.8+10-0ubuntu1~20.04) ...
+Setting up openjdk-11-jdk-headless:amd64 (11.0.8+10-0ubuntu1~20.04) ...
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/jar to provide /usr/bin/jar (jar) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/jarsigner to provide /usr/bin/jarsigner (jarsigner) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/javac to provide /usr/bin/javac (javac) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/javadoc to provide /usr/bin/javadoc (javadoc) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/javap to provide /usr/bin/javap (javap) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/jcmd to provide /usr/bin/jcmd (jcmd) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/jdb to provide /usr/bin/jdb (jdb) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/jdeprscan to provide /usr/bin/jdeprscan (jdeprscan) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/jdeps to provide /usr/bin/jdeps (jdeps) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/jimage to provide /usr/bin/jimage (jimage) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/jinfo to provide /usr/bin/jinfo (jinfo) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/jlink to provide /usr/bin/jlink (jlink) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/jmap to provide /usr/bin/jmap (jmap) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/jmod to provide /usr/bin/jmod (jmod) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/jps to provide /usr/bin/jps (jps) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/jrunscript to provide /usr/bin/jrunscript (jrunscript) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/jshell to provide /usr/bin/jshell (jshell) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/jstack to provide /usr/bin/jstack (jstack) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/jstat to provide /usr/bin/jstat (jstat) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/jstatd to provide /usr/bin/jstatd (jstatd) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/rmic to provide /usr/bin/rmic (rmic) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/serialver to provide /usr/bin/serialver (serialver) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/jaotc to provide /usr/bin/jaotc (jaotc) in auto mode
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/jhsdb to provide /usr/bin/jhsdb (jhsdb) in auto mode
+Setting up openjdk-11-jdk:amd64 (11.0.8+10-0ubuntu1~20.04) ...
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/jconsole to provide /usr/bin/jconsole (jconsole) in auto mode
+Setting up ca-certificates-java (20190405ubuntu1) ...
+head: cannot open '/etc/ssl/certs/java/cacerts' for reading: No such file or directory
+Adding debian:QuoVadis_Root_CA_3.pem
+Adding debian:Global_Chambersign_Root_-_2008.pem
+Adding debian:thawte_Primary_Root_CA_-_G2.pem
+Adding debian:SwissSign_Silver_CA_-_G2.pem
+Adding debian:Certigna.pem
+Adding debian:DigiCert_Global_Root_CA.pem
+Adding debian:GeoTrust_Universal_CA.pem
+Adding debian:GlobalSign_Root_CA_-_R6.pem
+Adding debian:CA_Disig_Root_R2.pem
+Adding debian:Staat_der_Nederlanden_EV_Root_CA.pem
+Adding debian:GeoTrust_Universal_CA_2.pem
+Adding debian:Entrust_Root_Certification_Authority_-_EC1.pem
+Adding debian:GeoTrust_Primary_Certification_Authority_-_G3.pem
+Adding debian:AffirmTrust_Premium_ECC.pem
+Adding debian:TrustCor_RootCert_CA-2.pem
+Adding debian:TrustCor_ECA-1.pem
+Adding debian:Security_Communication_RootCA2.pem
+Adding debian:Staat_der_Nederlanden_Root_CA_-_G2.pem
+Adding debian:Atos_TrustedRoot_2011.pem
+Adding debian:AffirmTrust_Premium.pem
+Adding debian:QuoVadis_Root_CA_1_G3.pem
+Adding debian:Go_Daddy_Class_2_CA.pem
+Adding debian:AffirmTrust_Commercial.pem
+Adding debian:GeoTrust_Primary_Certification_Authority_-_G2.pem
+Adding debian:DigiCert_Assured_ID_Root_CA.pem
+Adding debian:NetLock_Arany_=Class_Gold=_Főtanúsítvány.pem
+Adding debian:DigiCert_Trusted_Root_G4.pem
+Adding debian:OISTE_WISeKey_Global_Root_GB_CA.pem
+Adding debian:VeriSign_Class_3_Public_Primary_Certification_Authority_-_G4.pem
+Adding debian:Amazon_Root_CA_3.pem
+Adding debian:GlobalSign_ECC_Root_CA_-_R4.pem
+Adding debian:Starfield_Root_Certificate_Authority_-_G2.pem
+Adding debian:EC-ACC.pem
+Adding debian:SecureSign_RootCA11.pem
+Adding debian:Microsec_e-Szigno_Root_CA_2009.pem
+Adding debian:EE_Certification_Centre_Root_CA.pem
+Adding debian:TUBITAK_Kamu_SM_SSL_Kok_Sertifikasi_-_Surum_1.pem
+Adding debian:COMODO_ECC_Certification_Authority.pem
+Adding debian:Trustis_FPS_Root_CA.pem
+Adding debian:GlobalSign_Root_CA_-_R2.pem
+Adding debian:Cybertrust_Global_Root.pem
+Adding debian:GlobalSign_ECC_Root_CA_-_R5.pem
+Adding debian:Chambers_of_Commerce_Root_-_2008.pem
+Adding debian:Starfield_Class_2_CA.pem
+Adding debian:Verisign_Class_3_Public_Primary_Certification_Authority_-_G3.pem
+Adding debian:ACCVRAIZ1.pem
+Adding debian:COMODO_RSA_Certification_Authority.pem
+Adding debian:OISTE_WISeKey_Global_Root_GC_CA.pem
+Adding debian:CFCA_EV_ROOT.pem
+Adding debian:TeliaSonera_Root_CA_v1.pem
+Adding debian:QuoVadis_Root_CA_2_G3.pem
+Adding debian:DigiCert_Assured_ID_Root_G3.pem
+Adding debian:SecureTrust_CA.pem
+Adding debian:Amazon_Root_CA_1.pem
+Adding debian:ePKI_Root_Certification_Authority.pem
+Adding debian:Starfield_Services_Root_Certificate_Authority_-_G2.pem
+Adding debian:E-Tugra_Certification_Authority.pem
+Adding debian:QuoVadis_Root_CA_2.pem
+Adding debian:TWCA_Root_Certification_Authority.pem
+Adding debian:Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.pem
+Adding debian:GeoTrust_Primary_Certification_Authority.pem
+Adding debian:Actalis_Authentication_Root_CA.pem
+Adding debian:LuxTrust_Global_Root_2.pem
+Adding debian:Taiwan_GRCA.pem
+Adding debian:DigiCert_Assured_ID_Root_G2.pem
+Adding debian:XRamp_Global_CA_Root.pem
+Adding debian:USERTrust_ECC_Certification_Authority.pem
+Adding debian:certSIGN_ROOT_CA.pem
+Adding debian:D-TRUST_Root_Class_3_CA_2_EV_2009.pem
+Adding debian:Staat_der_Nederlanden_Root_CA_-_G3.pem
+Adding debian:Certum_Trusted_Network_CA.pem
+Adding debian:GeoTrust_Global_CA.pem
+Adding debian:thawte_Primary_Root_CA_-_G3.pem
+Adding debian:Hongkong_Post_Root_CA_1.pem
+Adding debian:ISRG_Root_X1.pem
+Adding debian:TWCA_Global_Root_CA.pem
+Adding debian:SwissSign_Gold_CA_-_G2.pem
+Adding debian:DigiCert_High_Assurance_EV_Root_CA.pem
+Adding debian:GlobalSign_Root_CA.pem
+Adding debian:Entrust.net_Premium_2048_Secure_Server_CA.pem
+Adding debian:SSL.com_EV_Root_Certification_Authority_ECC.pem
+Adding debian:Hellenic_Academic_and_Research_Institutions_RootCA_2015.pem
+Adding debian:Entrust_Root_Certification_Authority_-_G2.pem
+Adding debian:AC_RAIZ_FNMT-RCM.pem
+Adding debian:GlobalSign_Root_CA_-_R3.pem
+Adding debian:ssl-cert-snakeoil.pem
+Adding debian:Hellenic_Academic_and_Research_Institutions_ECC_RootCA_2015.pem
+Adding debian:QuoVadis_Root_CA_3_G3.pem
+Adding debian:SSL.com_Root_Certification_Authority_RSA.pem
+Adding debian:T-TeleSec_GlobalRoot_Class_2.pem
+Adding debian:Certplus_Class_2_Primary_CA.pem
+Adding debian:AffirmTrust_Networking.pem
+Adding debian:OISTE_WISeKey_Global_Root_GA_CA.pem
+Adding debian:D-TRUST_Root_Class_3_CA_2_2009.pem
+Adding debian:Entrust_Root_Certification_Authority.pem
+Adding debian:Go_Daddy_Root_Certificate_Authority_-_G2.pem
+Adding debian:Deutsche_Telekom_Root_CA_2.pem
+Adding debian:Certum_Trusted_Network_CA_2.pem
+Adding debian:Izenpe.com.pem
+Adding debian:IdenTrust_Commercial_Root_CA_1.pem
+Adding debian:DigiCert_Global_Root_G2.pem
+Adding debian:Baltimore_CyberTrust_Root.pem
+Adding debian:Secure_Global_CA.pem
+Adding debian:QuoVadis_Root_CA.pem
+Adding debian:Sonera_Class_2_Root_CA.pem
+Adding debian:Hellenic_Academic_and_Research_Institutions_RootCA_2011.pem
+Adding debian:Amazon_Root_CA_4.pem
+Adding debian:TrustCor_RootCert_CA-1.pem
+Adding debian:T-TeleSec_GlobalRoot_Class_3.pem
+Adding debian:USERTrust_RSA_Certification_Authority.pem
+Adding debian:Certinomis_-_Root_CA.pem
+Adding debian:SZAFIR_ROOT_CA2.pem
+Adding debian:DST_Root_CA_X3.pem
+Adding debian:DigiCert_Global_Root_G3.pem
+Adding debian:Network_Solutions_Certificate_Authority.pem
+Adding debian:SSL.com_Root_Certification_Authority_ECC.pem
+Adding debian:Buypass_Class_3_Root_CA.pem
+Adding debian:VeriSign_Class_3_Public_Primary_Certification_Authority_-_G5.pem
+Adding debian:GDCA_TrustAUTH_R5_ROOT.pem
+Adding debian:Comodo_AAA_Services_root.pem
+Adding debian:VeriSign_Universal_Root_Certification_Authority.pem
+Adding debian:Buypass_Class_2_Root_CA.pem
+Adding debian:SSL.com_EV_Root_Certification_Authority_RSA_R2.pem
+Adding debian:COMODO_Certification_Authority.pem
+Adding debian:Amazon_Root_CA_2.pem
+Adding debian:thawte_Primary_Root_CA.pem
+Adding debian:IdenTrust_Public_Sector_Root_CA_1.pem
+Adding debian:Security_Communication_Root_CA.pem
+done.
+Processing triggers for desktop-file-utils (0.24-1ubuntu3) ...
+Processing triggers for mime-support (3.64ubuntu1) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for gnome-menus (3.36.0-1ubuntu1) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for ca-certificates (20190110ubuntu1.1) ...
+Updating certificates in /etc/ssl/certs...
+0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+
+done.
+done.
+Processing triggers for sgml-base (1.29.1) ...
+Setting up x11proto-dev (2019.2-1ubuntu1) ...
+Setting up libxau-dev:amd64 (1:1.0.9-0ubuntu1) ...
+Setting up libice-dev:amd64 (2:1.0.10-0ubuntu1) ...
+Setting up libsm-dev:amd64 (2:1.2.3-1) ...
+Setting up libxdmcp-dev:amd64 (1:1.1.3-0ubuntu1) ...
+Setting up x11proto-core-dev (2019.2-1ubuntu1) ...
+Setting up libxcb1-dev:amd64 (1.14-2) ...
+Setting up libx11-dev:amd64 (2:1.6.9-2ubuntu1.1) ...
+Setting up libxt-dev:amd64 (1:1.1.5-1) ...

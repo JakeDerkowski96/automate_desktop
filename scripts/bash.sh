@@ -12,9 +12,9 @@ BASH_LOC="${HOME}/.bashrc"
 # back up bash aliases if exist
 BackUpBash(){
   if [ -f "${1}" ]; then
-    cp "${1}" "${1}.bak"
+     sudo cp "${1}" "${1}.bak"
   else
-    touch "${1}"
+    sudo touch "${1}"
   fi
 }
 
@@ -24,8 +24,8 @@ BackUpBash $ALIAS_LOC;
 BackUpBash $BASH_LOC;
 
 echo -e "Moving my files to yo spot"; sleep 1;
-mv $NEW_ALIASES $ALIAS_LOC
-mv $NEW_BASH $BASH_LOC
+sudo mv $NEW_ALIASES $ALIAS_LOC
+sudo mv $NEW_BASH $BASH_LOC
 
 echo -e "testing new terminal settings"
 source "$HOME/.bashrc"; sleep 2;

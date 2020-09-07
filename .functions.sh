@@ -15,7 +15,6 @@ CONTENT="$INSTALL_HOME/.content"
 
 # download prereqs to make terminal pretty + progress bar
 required() {
-  echo "Downloading prerequistes..."
   sudo apt-get update
   sudo apt-get install lolcat figlet snapd pv libncurses5-dev progress -y
 }
@@ -41,7 +40,6 @@ show_host_ip() {
   echo -e "@"; sleep 0.5;
   pprint "$(hostname -I)"; sleep 1;
 }
-
 
 # check if does exists
 check_dir(){
@@ -86,8 +84,34 @@ finish_install() {
   echo "Details found in log directory "
 }
 
+# $1 = what is being asked to install
+# $2 = script
+get_ans() {
+  SCRIPT="${2}"
+  read -p "Do you want to install ${1}? : " ans
+  while true; do
+    case $ans in
+      [yY]* ) start_install ${1}
+              bash $SCRIPT
+              finish_install;
+              break;;
+      [nN]* ) exit;;
+
+      * ) echo -e "Invalid input"
+    esac
+  done
+}
+
+
+
 execution;
+echo -e "Installing prerequistes..."; sleep 0.5;
+
 check_dir logs;
-touch logs/apt.txt
-touch logs/snap.txt
-touch log/prereqs.txt
+required > "logs/prereqs.txt";
+check_dir scripts;
+
+touch logs/packages.txt
+touch logs/snaps.txt
+touch logs/prereqs.txt
+# touch logs/debs.txt
