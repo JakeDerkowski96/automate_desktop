@@ -53,7 +53,8 @@ media(){
 # programming
 prgms() {
   pprint "Programming"; sleep 1;
-  sudo apt-get install gcc g++ sqlitebrowser mariadb-client mariadb-common openjdk-11-jdk -y > $APT_LOG
+  sudo apt-get install gcc g++ sqlitebrowser mariadb-client \
+  mariadb-common openjdk-11-jdk python3-pip -y > $APT_LOG
 }
 
 # system/utilities
@@ -93,6 +94,21 @@ install_all() {
   office;
 }
 
+docker(){
+  # docker
+  # sudo apt-get install apt-transport-https ca-certificates \
+  #  curl gnupg-agent software-properties-common -y
+  #  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  #  sudo apt-key fingerprint 0EBFCD88
+  #
+  #  sudo add-apt-repository \
+  #  "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+  #  $(lsb_release -cs) \
+  #  stable"
+  #
+  sudo apt-get install docker -y
+}
+
 # make ask function
 ask_user() {
   read -p "Do you want to install ${1}? (Y/n) : " answer
@@ -120,7 +136,28 @@ install_packages() {
     ask_user prgms;
     ask_user utilities;
     ask_user office;
+    ask_user docker;
 }
+
+# make ask function
+ask_user() {
+  read -p "Install everything at one? (Y/n) : " answer
+  while true; do
+    case $answer in
+      [yY]* ) ${1};
+              break;;
+
+      [nN]* )  echo -e "looking at packages by genre...";
+               install_packages;
+               exit;;
+
+      * )     echo "Invalid input"
+              echo -e "Enter (y/n)"
+              break;;
+     esac
+   done
+}
+
 
 pprint Debian Packages
 install_packages;

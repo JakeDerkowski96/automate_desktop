@@ -21,7 +21,7 @@ source $FUNC
 read -p "Automate installation? (Y/n)?  : " answer
 while true; do
   case $answer in
-    [Yy]* ) echo -e "ok, i got ya"; echo; sleep 0.5;
+    [Yy]* ) echo -e "ok, i got ya"; sleep 0.5;
 
             check_dir logs;
             echo -e "Details found in the 'logs' folder";
