@@ -10,41 +10,41 @@ echo "More info @ ${HOME_DIR}/logs/packages.txt"
 
 #update and upgrade
 update() {
-  sudo apt-get update && sudo apt-get upgrade -y > $APT_LOG
+  sudo apt-get update && sudo apt-get upgrade -y >> $APT_LOG
 }
 
 # Install package manager
 package_managers() {
   pprint "Package Managers"
-  sudo apt-get install synaptic gdebi snapd -y > $APT_LOG
+  sudo apt-get install synaptic gdebi snapd -y >> $PT_LOG
 }
 
 # user settings
 settings() {
   pprint "User Settings"
-  sudo apt-get install gnome-tweak-tool autoconf -y > $APT_LOG
-  sudo apt-get install automake wget sassc pkg-config optipng -y > $APT_LOG
-  sudo apt-get install numix-icon-theme python3-pip -y > $APT_LOG
+  sudo apt-get install gnome-tweak-tool autoconf -y >> $APT_LOG
+  sudo apt-get install automake wget sassc pkg-config optipng -y >> $APT_LOG
+  sudo apt-get install numix-icon-theme python3-pip -y >> $APT_LOG
 }
 
 # network
 network() {
   pprint "network";
-  sudo apt-get install net-tools nmap apt-transport-https hping3 -y > $APT_LOG
+  sudo apt-get install net-tools nmap apt-transport-https hping3 -y >> $APT_LOG
 
   # internet
   pprint "Internet"
   # download google chrome
   wget -qO https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  sudo dpkg -i google-chrome*.deb -y > $APT_LOG
+  sudo dpkg -i google-chrome*.deb -y >> $APT_LOG
   #-----
-  sudo apt-get install chrome-gnome-shell links bittorrent git -y > $APT_LOG
+  sudo apt-get install chrome-gnome-shell links bittorrent git -y >> $APT_LOG
 }
 
 # media
 media(){
   pprint "Media"; sleep 1;
-  sudo apt-get install vlc -y > $APT_LOG
+  sudo apt-get install vlc -y >> $APT_LOG
   # spotify
   # curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
   # echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
@@ -54,14 +54,14 @@ media(){
 prgms() {
   pprint "Programming"; sleep 1;
   sudo apt-get install gcc g++ sqlitebrowser mariadb-client \
-  mariadb-common openjdk-11-jdk python3-pip -y > $APT_LOG
+  mariadb-common openjdk-11-jdk python3-pip -y >> $APT_LOG
 }
 
 # system/utilities
 utilities() {
   pprint "Utilities"
   sudo apt-get install afflib-tools netdiscover wireshark openssl -y
-  sudo apt-get install htop gtkhash ghex -y > $APT_LOG
+  sudo apt-get install htop gtkhash ghex -y >> $APT_LOG
 
 }
 
@@ -72,15 +72,15 @@ office() {
   pprint "ATOM"
   wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
   sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
-  sudo apt-get update > $APT_LOG
-  sudo apt-get install atom -y > $APT_LOG
+  sudo apt-get update >> $APT_LOG
+  sudo apt-get install atom -y >> $APT_LOG
 
   # sublime
   pprint "SUBLIME"
   wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
   echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
   sudo apt-get update -y > $APT_LOG
-  sudo apt-get install sublime-text -y > $APT_LOG
+  sudo apt-get install sublime-text -y >> $APT_LOG
 }
 
 install_all() {
@@ -96,8 +96,11 @@ install_all() {
 
 docker(){
   # docker
-  # sudo apt-get install apt-transport-https ca-certificates \
-  #  curl gnupg-agent software-properties-common -y
+  pprint docker.io
+  sudo apt-get install apt-transport-https ca-certificates \
+   curl gnupg-agent software-properties-common -y >> $APT_LOG
+   sudo apt-get install docker.io -y >> $APT_LOG
+
   #  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
   #  sudo apt-key fingerprint 0EBFCD88
   #
@@ -106,7 +109,7 @@ docker(){
   #  $(lsb_release -cs) \
   #  stable"
   #
-  sudo apt-get install docker -y
+
 }
 
 # make ask function
