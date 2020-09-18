@@ -111,7 +111,7 @@ check_dir logs;
 required > "logs/prereqs.txt";
 check_dir scripts;
 
+touch logs/prereqs.txt
 touch logs/packages.txt
 touch logs/snaps.txt
-touch logs/prereqs.txt
 # touch logs/debs.txt
