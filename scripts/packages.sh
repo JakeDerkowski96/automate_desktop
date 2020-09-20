@@ -7,6 +7,9 @@ source .functions.sh
 
 echo "More info @ ${HOME_DIR}/logs/packages.txt"
 
+log_sep(){
+  echo "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n" >> $APT_LOG
+}
 
 #update and upgrade
 update() {
@@ -16,29 +19,33 @@ update() {
 # Install package manager
 package_managers() {
   pprint "Package Managers"
-  sudo apt-get install synaptic gdebi snapd -y >> $PT_LOG
+  sudo apt-get install synaptic gdebi snapd -y >> $APT_LOG
+  log_sep
 }
 
 # user settings
 settings() {
   pprint "User Settings"
-  sudo apt-get install gnome-tweak-tool autoconf -y >> $APT_LOG
-  sudo apt-get install automake wget sassc pkg-config optipng -y >> $APT_LOG
-  sudo apt-get install numix-icon-theme python3-pip -y >> $APT_LOG
+  sudo apt-get install -y gnome-tweak-tool autoconf automake wget \
+  sassc pkg-config optipng numix-icon-theme python3-pip >> $APT_LOG
+  log_sep
 }
 
 # network
 network() {
   pprint "network";
-  sudo apt-get install net-tools nmap apt-transport-https hping3 -y >> $APT_LOG
+  sudo apt-get install net-tools nmap apt-transport-https arp-scan hping3 -y >> $APT_LOG
+  log_sep
 
   # internet
   pprint "Internet"
   # download google chrome
   wget -qO https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  sudo dpkg -i google-chrome*.deb -y >> $APT_LOG
+  sudo dpkg -i google-chrome*.deb -y >> $APT_LOG; log_sep;
   #-----
+  pprint "Internet" >> $APT_LOG
   sudo apt-get install chrome-gnome-shell links bittorrent git -y >> $APT_LOG
+  log_sep
 }
 
 # media
@@ -55,31 +62,36 @@ prgms() {
   pprint "Programming"; sleep 1;
   sudo apt-get install gcc g++ sqlitebrowser mariadb-client \
   mariadb-common openjdk-11-jdk python3-pip -y >> $APT_LOG
+  log_sep
 }
 
 # system/utilities
 utilities() {
   pprint "Utilities"
-  sudo apt-get install afflib-tools netdiscover wireshark openssl -y
-  sudo apt-get install htop gtkhash ghex -y >> $APT_LOG
+  sudo apt-get install -y afflib-tools netdiscover wireshark openssl \
+  htop gtkhash ghex -y >> $APT_LOG
+  log_sep
 
 }
 
 # office
 office() {
   pprint "Office"
-  sudo apt-get install texmaker cherrytree -y > $APT_LOG
+  sudo apt-get install texmaker cherrytree -y > $APT_LOG; 
+  log_sep;
+  
   pprint "ATOM"
-  wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
+  wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add - >> $APT_LOG
   sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
-  sudo apt-get update >> $APT_LOG
-  sudo apt-get install atom -y >> $APT_LOG
+  sudo apt-get update >> /dev/null
+  sudo apt-get install atom -y >> $APT_LOG;
+  log_sep;
 
   # sublime
   pprint "SUBLIME"
-  wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+  wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add - >> $APT_LOG
   echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-  sudo apt-get update -y > $APT_LOG
+  sudo apt-get update -y > /dev/null
   sudo apt-get install sublime-text -y >> $APT_LOG
 }
 
