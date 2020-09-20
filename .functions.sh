@@ -102,8 +102,6 @@ get_ans() {
   done
 }
 
-
-
 execution;
 echo -e "Installing prerequistes..."; sleep 0.5;
 
@@ -114,4 +112,5 @@ check_dir scripts;
 touch logs/prereqs.txt
 touch logs/packages.txt
 touch logs/snaps.txt
+touch logs/other.txt
 # touch logs/debs.txt

@@ -94,9 +94,20 @@ install_all() {
   office;
 }
 
+# ask user to install separate scripts
 docker(){
   bash .dockerio.sh
 }
+
+github_cli(){
+  bash .github.sh
+}
+
+# fail 2 ban
+fail2ban(){
+  bash .fail2ban.sh
+}
+
 
 # make ask function
 ask_user() {
@@ -105,6 +116,7 @@ ask_user() {
   do
     case $answer in
       [yY]* ) ${1};
+              log_separater;
               break;;
 
       [nN]* ) exit;;
@@ -127,6 +139,8 @@ install_packages() {
     ask_user office;
 
     ask_user docker;
+    ask_user github_cli;
+    ask_user fail2ban;
 }
 
 
