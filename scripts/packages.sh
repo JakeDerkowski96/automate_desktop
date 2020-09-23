@@ -68,7 +68,7 @@ utilities() {
 # office
 office() {
   pprint "Office"
-  sudo apt-get install texmaker -y > $APT_LOG
+  sudo apt-get install texmaker cherrytree -y > $APT_LOG
   pprint "ATOM"
   wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
   sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'

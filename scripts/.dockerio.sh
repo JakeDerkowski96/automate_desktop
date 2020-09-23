@@ -1,7 +1,15 @@
 #!/bin/bash
 # install docker.io
 
+# this can be transfered to the other scripts 
+# to only make log files if installation desired
+
 # install funcion
+HOMEDIR="$(cd .. && pwd)"
+LOGDIR="$HOMEDIR/logs"
+# touch "$LOGDIR/docker.txt"
+
+
 docker_install(){
   # update apt
   sudo apt-get update
