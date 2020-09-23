@@ -31,7 +31,7 @@ while true; do
             # dispaly pretty terminal
             show_host_ip;
 
-            # bash $TERMIN
+            bash $TERMIN
             bash $PKGS
             bash $SNAPS
 
@@ -43,6 +43,6 @@ while true; do
             exit;;
 
     * )     echo "Invalid input";
-            break;;
+            echo -e "Enter (Y/n)";;
   esac
 done

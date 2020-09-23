@@ -1,9 +1,24 @@
 #!/bin/bash
 # functions for global use
 
+# misc / other log file
+HOMEDIR="$(cd .. && pwd)"
+LOGZ="$HOMEDIR/logs/other.txt"
+
+log_separater(){
+  echo -e "
+  ===========================================================
+  " >> $LOGZ
+}
+
 # print pretty
 pprint() {
   echo -e "${1} " | figlet | lolcat
+}
+
+update_grade(){
+  sudo apt-get update > /dev/null;
+  sudo apt-get upgrade -y > /dev/null
 }
 
 # ask for permission

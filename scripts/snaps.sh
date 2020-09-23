@@ -18,6 +18,7 @@ install_snaps(){
   # sudo snap install postgresql10
   # sudo snap install powershell --classic
   # sudo snap install simplenote
+  sudo snap install cherrytree
 }
 
 get_ans snaps install_snaps;

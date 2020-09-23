@@ -53,8 +53,8 @@ media(){
 # programming
 prgms() {
   pprint "Programming"; sleep 1;
-  sudo apt-get install gcc g++ sqlitebrowser mariadb-client \
-  mariadb-common openjdk-11-jdk python3-pip -y >> $APT_LOG
+  sudo apt-get install -y gcc g++ sqlitebrowser mariadb-client \
+  mariadb-common openjdk-11-jdk python3-pip nodejs npm >> $APT_LOG
 }
 
 # system/utilities
@@ -68,7 +68,7 @@ utilities() {
 # office
 office() {
   pprint "Office"
-  sudo apt-get install texmaker cherrytree -y > $APT_LOG
+  sudo apt-get install texmaker -y > $APT_LOG
   pprint "ATOM"
   wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
   sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
@@ -83,20 +83,21 @@ office() {
   sudo apt-get install sublime-text -y >> $APT_LOG
 }
 
-install_all() {
-  update;
-  package_managers;
-  settings;
-  network;
-  media;
-  prgms;
-  utilities;
-  office;
-}
 
+# ask user to install separate scripts
 docker(){
   bash .dockerio.sh
 }
+
+github_cli(){
+  bash .github.sh
+}
+
+# fail 2 ban
+fail2ban(){
+  bash .fail2ban.sh
+}
+
 
 # make ask function
 ask_user() {
@@ -105,6 +106,7 @@ ask_user() {
   do
     case $answer in
       [yY]* ) ${1};
+              log_separater;
               break;;
 
       [nN]* ) exit;;
@@ -127,6 +129,8 @@ install_packages() {
     ask_user office;
 
     ask_user docker;
+    ask_user github_cli;
+    ask_user fail2ban;
 }
 
 
