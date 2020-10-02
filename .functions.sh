@@ -10,24 +10,29 @@ PKGS="${SCRIPTS}/packages.sh"
 SNAPS="${SCRIPTS}/snaps.sh"
 TERMIN="$SCRIPTS/bash.sh"
 # DEBS="${SCRIPTS}/debs.sh"
+PRETTY_UPDATE="sys_update.sh"
+
 
 CONTENT="$INSTALL_HOME/.content"
+
+update_script_save() {
+  chmod +x $PRETTY_UPDATE
+  cp $PRETTY_UPDATE $HOME
+  echo "alias pupdate='bash $HOME/$PRETTY_UPDATE'" \
+  >> $HOME/.bash_aliases
+}
 
 # download prereqs to make terminal pretty + progress bar
 required() {
   sudo apt-get update
-  sudo apt-get install lolcat figlet snapd pv libncurses5-dev progress -y
+  sudo apt-get install lolcat figlet snapd pv libncurses5-dev progress -y > /dev/null
 }
 
 # print pretty
-pprint() {
-  echo -e "${1} " | figlet | lolcat
-}
+pprint() { echo -e "${1} " | figlet | lolcat; }
 
 # put into separate directory and `chmod` recursively
-execution() {
-  find $SCRIPTS -type f -iname "*.sh" -exec chmod +x {} \;
-}
+execution() { find $SCRIPTS -type f -iname "*.sh" -exec chmod +x {} \; }
 
 # RIGHT BEFORE INSTALLATION
 show_host_ip() {
@@ -101,7 +106,7 @@ get_ans() {
     esac
   done
 }
-
+update_script_save;
 execution;
 echo -e "Installing prerequistes..."; sleep 0.5;
 
