@@ -40,7 +40,7 @@ reboot(){
   else
     printf "\nMachine has now been updated\n";	sleep 0.3;
     printf "Reboot may be necessary for these changes to take effect.\n";
-    sleep 0.3;
+    sleep 0.3; clear;
     exit;
   fi
 }
