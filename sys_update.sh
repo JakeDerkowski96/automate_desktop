@@ -2,6 +2,9 @@
 # automate update and upgrade
 #  BUT PRETTY
 
+#***NOTE TO SELF: Print out the statistics of the upgrade, but not all of the output
+# ?tail the output stream.. or store in log and then grab last line
+
 check_fig() {
   FIG="/usr/bin/figlet";
   if [ ! f "$FIG" ]; then
