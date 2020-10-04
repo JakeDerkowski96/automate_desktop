@@ -5,11 +5,7 @@
 HOMEDIR="$(cd .. && pwd)"
 LOGZ="$HOMEDIR/logs/other.txt"
 
-log_separater(){
-  echo -e "
-  ===========================================================
-  " >> $LOGZ
-}
+log_separater() { printf "\n===========================================================\n" >> $LOGZ; }
 
 # print pretty
 pprint() {
