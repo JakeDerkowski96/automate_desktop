@@ -1,5 +1,5 @@
 
-# Alt-automate_desktop
+# automate_desktop
 Automate, or simplify the configuration of the Ubuntu operating system. To my preferences.
 
 
